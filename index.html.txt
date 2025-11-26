@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitoring Cuaca Sederhana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>🌦️ Monitoring Cuaca Sederhana</h1>
+    <p>Website ini menampilkan data cuaca otomatis.</p>
+  </header>
+
+  <main>
+
+    <section class="card">
+      <h2>Data Cuaca Sekarang</h2>
+
+      <div class="data-box">
+        <p>Suhu: <span id="temp">-</span> °C</p>
+        <p>Kelembapan: <span id="hum">-</span> %</p>
+        <p>Tekanan Udara: <span id="press">-</span> hPa</p>
+      </div>
+
+      <button id="refresh">🔄 Refresh Data</button>
+    </section>
+
+    <section class="card">
+      <h2>Penjelasan</h2>
+      <p>Website ini masih menggunakan data simulasi. Nanti bisa disambungkan ke data BMKG atau sensor IoT.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Monitoring Cuaca</p>
+  </footer>
+
+<script src="app.js"></script>
+</body>
+</html>
