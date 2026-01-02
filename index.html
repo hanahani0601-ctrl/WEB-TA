@@ -3,44 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Monitoring - 524</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <title>Weather Monitoring Dashboard</title>
 
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>🌦️ Weather Monitoring - 524</h1>
-    <p>Monitoring Cuaca Secara Real-time.</p>
+    <h1>🌙 Weather Monitoring Dashboard</h1>
+    <p>Monitoring Cuaca Real-Time & Historis</p>
   </header>
 
-  <main>
+  <main class="container">
 
-    <section class="card">
-      <h2>Data Cuaca Sekarang</h2>
-
-      <div class="data-box">
-        <p>Suhu🌡️: <span id="temp">-</span> °C</p>
-        <p>Kelembapan💧: <span id="hum">-</span> %</p>
-        <p>Tekanan Udara🌪️: <span id="press">-</span> hPa</p>
+    <!-- METRICS CARD -->
+    <section class="grid-metrics">
+      <div class="card">
+        <h3>🌡️ Suhu</h3>
+        <h2 id="tempValue">-- °C</h2>
       </div>
-
-      <button id="refresh">🔄 Refresh Data</button>
+      <div class="card">
+        <h3>💧 Kelembapan</h3>
+        <h2 id="humValue">-- %</h2>
+      </div>
+      <div class="card">
+        <h3>🌬️ Kecepatan Angin</h3>
+        <h2 id="windValue">-- m/s</h2>
+      </div>
+      <div class="card">
+        <h3>🧭 Arah Angin</h3>
+        <h2 id="dirValue">-- °</h2>
+      </div>
+      <div class="card">
+        <h3>⏱️ Tekanan Udara</h3>
+        <h2 id="pressValue">-- hPa</h2>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Penjelasan</h2>
-      <p>Website ini sekarang menampilkan data cuaca buatan, untuk hasil lebih proper ditunggu saja ya 😊.</p>
+    <!-- KLASIFIKASI CUACA -->
+    <section class="section">
+      <h2>🧠 Klasifikasi Cuaca Hari Ini</h2>
+      <div class="weather-class" id="weatherClass">
+        Memuat data...
+      </div>
+    </section>
+
+    <!-- GRAFIK -->
+    <section class="section">
+      <h2>📈 Grafik Historis (7 Data Terakhir)</h2>
+
+      <!-- DROPDOWN -->
+      <select id="chartSelector" class="chart-select">
+        <option value="temperature">Suhu (°C)</option>
+        <option value="humidity">Kelembapan (%)</option>
+        <option value="wind_speed">Kecepatan Angin (m/s)</option>
+        <option value="wind_direction">Arah Angin (°)</option>
+        <option value="pressure">Tekanan Udara (hPa)</option>
+      </select>
+
+      <!-- CHART -->
+      <div class="chart-container">
+        <canvas id="weatherChart"></canvas>
+      </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© TA 524-WS-P</p>
+    Data cuaca bersifat simulasi • Update otomatis setiap 15 detik
   </footer>
 
-<script src="app.js"></script>
+  <!-- JS -->
+  <script src="chart-config.js"></script>
+  <script src="app.js"></script>
+
 </body>
 </html>
-
-
